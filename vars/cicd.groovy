@@ -5,9 +5,9 @@ def GitDownload(repo)
 
 def MavenBuild()
 {
-  sh 'mvn package'
+  sh "mvn package"
 }
-def depoy(jobname, ipaddress, context_path)
+def depoy(jobname,ip,context_path)
 {
-  sh 'scp -i /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipaddress}:/var/lib/tomcat10/webapps/${context_path}.war'
+  sh "scp  /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context_path}.war"
 }
