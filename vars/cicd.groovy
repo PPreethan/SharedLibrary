@@ -9,5 +9,5 @@ def MavenBuild()
 }
 def depoy(jobname,ip,context_path)
 {
-  sh "scp  /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context_path}.war"
+  sh "scp -r /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context_path}.war"
 }
