@@ -9,5 +9,5 @@ def MavenBuild()
 }
 def deploy(environment, server, context)
 {
-  sh "scp /var/lib/jenkins/workspace/${environment}/webapp/target/webapp.war ubuntu@${server}:/var/lib/tomcat10/webapps/${context}.war"
+  sh "scp -o /var/lib/jenkins/workspace/${environment}/webapp/target/webapp.war ubuntu@${server}:/var/lib/tomcat10/webapps/${context}.war"
 }
