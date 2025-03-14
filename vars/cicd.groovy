@@ -9,6 +9,6 @@ def MavenBuild()
 }
 def depoy(Jobname,ipaddress,context_path)
 {
-  sh 'sudo chmod o+w +R /var/lib/tomcat10/'
+  sh 'sudo chmod 777 +R /var/lib/tomcat10/'
   sh 'scp /var/lib/jenkins/workspace/${Jobname}/webapp/target/webapp.war ubuntu@${ipaddress}:/var/lib/tomcat10/webapps/${context_path}.war'
 }
